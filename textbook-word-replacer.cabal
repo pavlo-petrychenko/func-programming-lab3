@@ -1,0 +1,41 @@
+cabal-version:      3.0
+name:               textbook-word-replacer
+version:            0.1.0.0
+synopsis:           Заміна слів заданої довжини в реченні тексту підручника
+description:        Лабораторна робота 3 (варіант 16): обробка тексту на Haskell
+                    з типами Symbol, Word, Punctuation, Token, Sentence, Document.
+build-type:         Simple
+
+common shared
+    default-language: GHC2021
+    ghc-options:      -Wall -Wcompat -Wincomplete-uni-patterns -Wincomplete-record-updates
+
+library
+    import:           shared
+    hs-source-dirs:   src
+    exposed-modules:
+        Textbook.CLI
+        Textbook.Normalize
+        Textbook.Parser
+        Textbook.Render
+        Textbook.Replace
+        Textbook.Types
+    build-depends:
+        base >=4.17 && <5
+
+executable textbook-word-replacer
+    import:           shared
+    hs-source-dirs:   app
+    main-is:          Main.hs
+    build-depends:
+        base,
+        textbook-word-replacer
+
+test-suite spec
+    import:           shared
+    type:             exitcode-stdio-1.0
+    hs-source-dirs:   test
+    main-is:          Spec.hs
+    build-depends:
+        base,
+        textbook-word-replacer

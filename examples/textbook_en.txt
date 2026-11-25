@@ -1,0 +1,5 @@
+Haskell is a purely functional programming language. It was named after the logician Haskell B. Curry. Is it hard to learn? Not really, e.g. when you start with small programs!
+
+A function takes arguments and returns a result. Pure functions have no side effects, so the same input always gives the same output. The value 2.718 is called e, and the identifier snake_case is a normal name.
+
+Lists are the basic data structure (see Fig. 3). A string is a list of characters... but it is not the fastest option. Dr. Smith said: "Types are the best documentation." Many agree with that.
